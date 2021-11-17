@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="view_margin_extra">64dp</dimen>
+    <dimen name="view_margin_std">32dp</dimen>
+    <dimen name="text_size_big">18sp</dimen>
+    <dimen name="text_size_bigger">22sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="view_margin_narrow">16dp</dimen>
+    <dimen name="icon_image_size">32dp</dimen>
+    <dimen name="view_padding_std">12dp</dimen>
+    <dimen name="view_padding_extra">32dp</dimen>
+</resources>

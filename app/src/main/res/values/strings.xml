@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Trivia Game</string>
+    <string name="start_image">Start Image</string>
+    <string name="start_game">Start Game</string>
+    <string name="welcome_text">Welcome to Trivia Game!</string>
+    <string name="question">Question</string>
+    <string name="enter_you_answer">Enter you answer</string>
+    <string name="submit">Submit</string>
+    <string name="trivia">Trivia</string>
+    <string name="question_category">Question Category</string>
+    <string name="invalid_response">Invalid Response</string>
+    <string name="correct_answer">Correct Answer</string>
+    <string name="incorrect_answer">Incorrect Answer</string>
+    <string name="test_image">Test Image</string>
+    <string name="icon">Icon</string>
+</resources>
