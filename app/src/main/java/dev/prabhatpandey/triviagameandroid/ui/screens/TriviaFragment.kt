@@ -113,7 +113,7 @@ class TriviaFragment : Fragment() {
                 showSnackBar(isCorrect)
                 // Disable EditText and button so that user cannot enter
                 // data again and press submit while the new question is loading.
-                disableViews()
+                disableEditTextAndButton()
                 // fetch new question after a delay of 2 seconds so that user can see
                 // if the answer is correct or incorrect
                 fetchNewQuestion()
@@ -124,7 +124,7 @@ class TriviaFragment : Fragment() {
     /**
      * Disables the Answer EditText and Submit Button
      */
-    private fun disableViews() {
+    private fun disableEditTextAndButton() {
         binding.answerLayout.isEnabled = false
         binding.submitBtn.isEnabled = false
     }

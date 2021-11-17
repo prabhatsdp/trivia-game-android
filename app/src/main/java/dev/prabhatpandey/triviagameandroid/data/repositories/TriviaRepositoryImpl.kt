@@ -16,6 +16,9 @@ class TriviaRepositoryImpl @Inject constructor(
     private val triviaApi: TriviaApi
 ) : TriviaRepository {
 
+    /**
+     * Fetches a new random question from API using trivia API
+     */
     override suspend fun getQuestion(): Resource<QuestionResponse> {
         return try {
             val res = triviaApi.getQuestion()

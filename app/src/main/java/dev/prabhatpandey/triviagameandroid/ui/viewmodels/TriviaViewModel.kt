@@ -30,14 +30,24 @@ class TriviaViewModel @Inject constructor() : ViewModel() {
     }
 
 
+    /**
+     * Sets the answer input live data with given [input]
+     */
     fun setAnswerInput(input: String) {
         _answerInput.value = input
     }
 
+    /**
+     * Sets the question live data with given [ques]
+     */
     fun setQuestion(ques: Question) {
         _question.value = ques
     }
 
+    /**
+     * Checks if the answer is correct or not and saves the boolean value
+     * in the isAnswerCorrect live data.
+     */
     fun checkAnswer(answer: String) {
         val ques = question.value
         if (ques != null) {

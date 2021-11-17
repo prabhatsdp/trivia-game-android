@@ -34,10 +34,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navGraphContainer) as NavHostFragment
 
-        navController =  navHostFragment.navController
+        setupViews()
+        setupObservers()
+    }
 
+
+    private fun setupViews() {
+        // get the nav host fragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.navGraphContainer) as NavHostFragment
+
+        // initialize the nav controller
+        navController = navHostFragment.navController
+
+        //initialize the app bar configuration
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.startScreen,
@@ -45,36 +56,30 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+        // setup action bar so that it changes the title according to the destination
+        // and shows the back button if applicable
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        setupViews()
-        setupListeners()
-        setupObservers()
     }
 
-
-    private fun setupViews() {
-        // TODO: 11/16/2021 Setup Views
-
-    }
-
-    private fun setupListeners() {
-        // TODO: 11/16/2021 Setup Listeners
-    }
-
+    /**
+     * Attaches the observer to the live data objects of MainViewModel
+     */
     private fun setupObservers() {
+
+        // sets up the observer on question live data so that when question loads
+        // the page changes to new question screen
         mMainViewModel.question.observe(this) {
             it.getContentIfNotHandled()?.let { questionResource ->
                 when (questionResource.status) {
                     Status.ERROR -> {
                         // error state
                         binding.progressBar.visibility = View.GONE
-                        Log.d(TAG, "setupObservers: Error: ${questionResource.message}")
                     }
                     Status.SUCCESS -> {
-                        // success state launch question fragment
+                        // success state launch new question fragment
                         binding.progressBar.visibility = View.GONE
-                        Log.d(TAG, "setupObservers: Success => ${questionResource.data}")
+
                         val question = questionResource.data?.let { ques ->
                             Question(
                                 title = ques.question,

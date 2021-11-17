@@ -2,6 +2,7 @@
 <resources>
     <dimen name="view_margin_extra">64dp</dimen>
     <dimen name="view_margin_std">32dp</dimen>
+    <dimen name="view_margin_small">24dp</dimen>
     <dimen name="text_size_big">18sp</dimen>
     <dimen name="text_size_bigger">22sp</dimen>
     <dimen name="text_size_normal">16sp</dimen>

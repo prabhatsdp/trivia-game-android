@@ -24,6 +24,9 @@ class MainViewModel @Inject constructor(
     private val _question = MutableLiveData<Event<Resource<QuestionResponse>>>()
     val question: LiveData<Event<Resource<QuestionResponse>>> = _question
 
+    /**
+     * Fetches the question from the API and loads that in question live data.
+     */
     fun fetchQuestion() {
 
         _question.value = Event(Resource.loading(null))

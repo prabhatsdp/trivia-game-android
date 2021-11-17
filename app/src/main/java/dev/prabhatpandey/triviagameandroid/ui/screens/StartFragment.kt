@@ -21,6 +21,7 @@ class StartFragment : Fragment() {
 
     private val mainViewModel: MainViewModel by activityViewModels()
 
+    // view binding object
     private var _binding : FragmentStartBinding? = null
     private val binding get() = _binding!!
 
@@ -35,7 +36,7 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflate the layout using view binding for this fragment
         _binding = FragmentStartBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,17 +44,12 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // other ui code
-        setupViews()
         setupListeners()
-        setupObservers()
     }
 
-    private fun setupViews() {
-        // TODO: 11/16/2021 Setup Views
-    }
 
     private fun setupListeners() {
-        // TODO: 11/16/2021 Setup Listeners
+
         binding.run {
             startGameBtn.setOnClickListener {
                 mainViewModel.fetchQuestion()
@@ -61,10 +57,6 @@ class StartFragment : Fragment() {
         }
     }
 
-
-    private fun setupObservers() {
-
-    }
 
     companion object {
         /**
